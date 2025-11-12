@@ -21,7 +21,7 @@
 		<Nullable>enable</Nullable>
 
 		<!-- Display name -->
-		<ApplicationTitle>CadastroEventosApp</ApplicationTitle>
+		<ApplicationTitle>Organiza Eventos</ApplicationTitle>
 
 		<!-- App Identifier -->
 		<ApplicationId>com.companyname.cadastroeventosapp</ApplicationId>
