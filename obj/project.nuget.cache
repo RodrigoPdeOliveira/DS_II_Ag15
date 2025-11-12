@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "bts9JV9lPrw=",
+  "success": false,
+  "projectFilePath": "/media/sdb300gb/Curso-DS/Desenvolvimento_de_sistemas/modulo02/agenda15/CadastroEventosApp/CadastroEventosApp.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1012",
+      "level": "Error",
+      "message": "Platform version is not present for one or more target frameworks, even though they have specified a platform: net8.0-ios, net8.0-maccatalyst"
+    }
+  ]
+}
