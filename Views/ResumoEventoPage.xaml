@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CadastroEventosApp.Views.ResumoEventoPage"
+             Title="ResumoEventoPage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+            
+            <Frame BackgroundColor="{StaticResource Accent}"
+                   Padding="20"
+                   CornerRadius="10">
+                <VerticalStackLayout Spacing="5">
+                    <Label Text="✓ Evento Cadastrado!"
+                           FontSize="24"
+                           FontAttributes="Bold"
+                           TextColor="White"
+                           HorizontalOptions="Center"/>
+                    <Label Text="Confira os detalhes abaixo"
+                           FontSize="14"
+                           TextColor="White"
+                           HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame BackgroundColor="{StaticResource Background}"
+                   Padding="20"
+                   CornerRadius="10"
+                   HasShadow="True">
+                <VerticalStackLayout Spacing="15">
+                    
+                    <Label Text="{Binding Nome}"
+                           FontSize="26"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"
+                           TextColor="{StaticResource Accent}"/>
+
+                    <BoxView HeightRequest="1"
+                             BackgroundColor="#CCCCCC"
+                             Margin="0,5,0,5"/>
+
+                    <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto"
+                          ColumnDefinitions="Auto,*"
+                          RowSpacing="12"
+                          ColumnSpacing="10">
+                        
+                        <Label Grid.Row="0" Grid.Column="0"
+                               Text="📅 Início:"
+                               FontSize="16"
+                               FontAttributes="Bold"/>
+                        <Label Grid.Row="0" Grid.Column="1"
+                               Text="{Binding DataInicio, StringFormat='{0:dd/MM/yyyy}'}"
+                               FontSize="16"/>
+
+                        <Label Grid.Row="1" Grid.Column="0"
+                               Text="📅 Término:"
+                               FontSize="16"
+                               FontAttributes="Bold"/>
+                        <Label Grid.Row="1" Grid.Column="1"
+                               Text="{Binding DataTermino, StringFormat='{0:dd/MM/yyyy}'}"
+                               FontSize="16"/>
+
+                        <Label Grid.Row="2" Grid.Column="0"
+                               Text="⏱️ Duração:"
+                               FontSize="16"
+                               FontAttributes="Bold"/>
+                        <Label Grid.Row="2" Grid.Column="1"
+                               FontSize="16">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="{Binding DuracaoEmDias}"/>
+                                    <Span Text=" dia(s)"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+
+                        <Label Grid.Row="3" Grid.Column="0"
+                               Text="📍 Local:"
+                               FontSize="16"
+                               FontAttributes="Bold"/>
+                        <Label Grid.Row="3" Grid.Column="1"
+                               Text="{Binding Local}"
+                               FontSize="16"/>
+
+                        <Label Grid.Row="4" Grid.Column="0"
+                               Text="👥 Participantes:"
+                               FontSize="16"
+                               FontAttributes="Bold"/>
+                        <Label Grid.Row="4" Grid.Column="1"
+                               Text="{Binding NumeroParticipantes}"
+                               FontSize="16"/>
+                    </Grid>
+
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame BackgroundColor="{StaticResource Background}"
+                   Padding="20"
+                   CornerRadius="10"
+                   BorderColor="{StaticResource Accent}"
+                   HasShadow="True">
+                <VerticalStackLayout Spacing="12">
+                    
+                    <Label Text="Informações Financeiras"
+                           FontSize="20"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"
+                           TextColor="{StaticResource Accent}"/>
+
+                    <BoxView HeightRequest="1"
+                             BackgroundColor="{StaticResource Background}"
+                             Margin="0,5,0,5"/>
+
+                    <Grid RowDefinitions="Auto,Auto,Auto,Auto"
+                          ColumnDefinitions="*,Auto"
+                          RowSpacing="10">
+                        
+                        <Label Grid.Row="0" Grid.Column="0"
+                               Text="Custo por Participante:"
+                               FontSize="16"/>
+                        <Label Grid.Row="0" Grid.Column="1"
+                               Text="{Binding CustoPorParticipante, StringFormat='R$ {0:N2}'}"
+                               FontSize="16"
+                               FontAttributes="Bold"/>
+
+                        <Label Grid.Row="1" Grid.Column="0"
+                               Text="Quantidade de Participantes:"
+                               FontSize="16"/>
+                        <Label Grid.Row="1" Grid.Column="1"
+                               Text="{Binding NumeroParticipantes}"
+                               FontSize="16"
+                               FontAttributes="Bold"/>
+
+                        <Label Grid.Row="2" Grid.Column="0"
+                               Text="Duração do Evento:"
+                               FontSize="16"/>
+                        <Label Grid.Row="2" Grid.Column="1"
+                               Text="{Binding DuracaoEmDias}"
+                               FontSize="16"
+                               FontAttributes="Bold"/>
+
+                        <BoxView Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
+                                 HeightRequest="2"
+                                 BackgroundColor="#CCCCCC"
+                                 Margin="0,5,0,5"/>
+                    </Grid>
+
+                    <Frame BackgroundColor="{StaticResource Accent}"
+                           Padding="15"
+                           CornerRadius="8"
+                           Margin="0,10,0,0">
+                        <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                            <Label Text="Custo Total:"
+                                   FontSize="20"
+                                   FontAttributes="Bold"
+                                   TextColor="White"/>
+                            <Label Text="{Binding CustoTotal, StringFormat='R$ {0:N2}'}"
+                                   FontSize="24"
+                                   FontAttributes="Bold"
+                                   TextColor="White"/>
+                        </HorizontalStackLayout>
+                    </Frame>
+
+                </VerticalStackLayout>
+            </Frame>
+
+            <Button Text="← Voltar ao Cadastro"
+                    Clicked="OnVoltarClicked"
+                    BackgroundColor="Gray"
+                    TextColor="White"
+                    FontSize="16"
+                    Margin="0,10,0,20"
+                    HeightRequest="50"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+    
+</ContentPage>
